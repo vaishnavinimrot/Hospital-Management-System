@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AdminLogin from "./Admin/AdminLogin";
+import ManageDoctor from "./Admin/ManageDoctorDetails";
+import ManagePatient from "./Admin/ManagePatienteDetails";
+import PostOperationSchedule from "./Admin/PostOperationSchedule";
+import UserRegister from "./User/Register";
+import ViewDoctors from "./User/ViewDoctorDetails";
+import ViewSurgicalInfo from "./User/ViewSurgicalInfo";
+import UserLogin from "./User/UserLogin";
+import Home from "./Home";
+import NavBar from "./NavBar";
+import Sidebar from "./SideBar";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      {/* Navbar will be rendered on every page */}
+      <NavBar />
+      <Sidebar />
+      <Routes>
+        {/* Define the routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/user/UserLogin" element={<UserLogin />} />
+        <Route path="/admin/AdminLogin" element={<AdminLogin />} />
+        <Route path="/admin/manage-doctor" element={<ManageDoctor />} />
+        <Route path="/admin/manage-patient" element={<ManagePatient />} />
+        <Route path="/admin/post-schedule" element={<PostOperationSchedule />} />
+        <Route path="/user/Register" element={<UserRegister />} />
+        <Route path="/user/view-doctors" element={<ViewDoctors />} />
+        <Route path="/user/view-surgery" element={<ViewSurgicalInfo />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;

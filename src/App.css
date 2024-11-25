@@ -1,42 +1,486 @@
-#root {
-  max-width: 1280px;
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* Container for Forms and Pages */
+.container {
+  padding: 20px;
+  flex: 1;
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #007bff;
+  padding: 10px 0;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 90px;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffdd40;
+}
+
+/* Common Form Styling */
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.text-center {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  font-family: Arial, sans-serif;
+}
+
+/* User Login Styling */
+.user-login-container {
+  
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-login-container h2 {
+  margin-top: 30%;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.user-login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-login-container label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.user-login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.user-login-container button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-login-container button:hover {
+  background-color: #06538e;
+}
+
+.user-login-container .forgot-password {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 10px;
+}
+
+.user-login-container .forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Admin Login Styling */
+.admin-login-container {
+ 
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-container h2 {
+  margin-top: 20%;
+  text-align: center;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Manage Doctor and Patient Form Styling */
+.manage-doctor-container,
+.manage-patient-container {
+  margin-top: 30%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.manage-doctor-container h2,
+.manage-patient-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.manage-doctor-container form,
+.manage-patient-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-doctor-container input,
+.manage-patient-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.manage-doctor-container button,
+.manage-patient-container button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.manage-doctor-container button:hover,
+.manage-patient-container button:hover {
+  background-color: #0056b3;
+}
+
+.user-register-container {
+  
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 50px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-register-container h2 {
+  margin-top: 30%;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.user-register-container form {
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.user-register-container label {
+ 
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.user-register-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.user-register-container button {
+ 
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-register-container button:hover {
+  background-color: #06538e;
+}
+
+
+/* Homepage Styling */
+.App {
+  position: fixed; /* Fix the position of the entire page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;    /* Full viewport height */
+  text-align: center;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out content properly */
+}
+
+.App-header {
+  background-color: #ffffff;
+  
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Prevent the header from shrinking */
+}
+
+.App-header h1 {
+  font-size: 2rem;
+  color: #444;
+}
+
+.App-header img {
+  
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section Under Navbar */
+.content {
+  padding-top: 20px; /* Adjust to give space for the navbar */
+  flex-grow: 1;  /* Allow content to take up remaining space */
+  padding-bottom: 20px; /* Optional: Add padding at the bottom */
+}
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hide the sidebar off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+/* Sidebar Open */
+.sidebar.open {
+  left: 0; /* Open the sidebar */
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center; /* Align icon and text */
+  color: #ddd;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Toggle Button Styling */
+.sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  left: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.sidebar-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Content Styling */
+.content {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.content.sidebar-open {
+  margin-left: 250px; /* Shift content when sidebar is open */
+}
+
+/* Add some space for your content */
+.content h2 {
+  color: #333;
+}
+
+.content p {
+  color: #555;
+}
+
+/* Icon Styling */
+.sidebar a i {
+  font-size: 1.2rem; /* Increase icon size */
+}
+
+/* Sidebar links */
+.sidebar a {
+  font-size: 1rem;
+  color: #fff;
+  padding: 12px 20px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.sidebar a i {
+  margin-right: 15px;
+}
+
+/* Active Link Style */
+.sidebar a.active {
+  background-color: #0069d9;
+}
+
+/* Sidebar on Mobile */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .sidebar a {
+    padding: 10px 15px;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
