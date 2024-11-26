@@ -17,7 +17,7 @@ body {
 
 /* Navbar Styling */
 .navbar {
-  background-color: #007bff;
+  background-color: #0056b3;
   padding: 10px 0;
   color: white;
   width: 100%;
@@ -205,7 +205,7 @@ input[type="text"] {
 .admin-login-container h2 {
   margin-top: 20%;
   text-align: center;
-  color: #333;
+  color: #0e0c0c;
   margin-bottom: 10px;
 }
 
@@ -404,7 +404,7 @@ input[type="text"] {
 }
 
 .sidebar a:hover {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
 }
 
@@ -413,7 +413,7 @@ input[type="text"] {
   position: fixed;
   top: 20px;
   left: 5px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -461,7 +461,7 @@ input[type="text"] {
 }
 
 .sidebar a:hover {
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
 }
 
@@ -471,7 +471,7 @@ input[type="text"] {
 
 /* Active Link Style */
 .sidebar a.active {
-  background-color: #0069d9;
+  background-color: #0056b3;
 }
 
 /* Sidebar on Mobile */
@@ -483,4 +483,15 @@ input[type="text"] {
   .sidebar a {
     padding: 10px 15px;
   }
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: inherit;
 }
