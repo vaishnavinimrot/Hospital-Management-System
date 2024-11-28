@@ -4,6 +4,9 @@ function ViewDoctors() {
   const doctors = [
     { name: "Dr. Smith", specialty: "Cardiology" },
     { name: "Dr. Lee", specialty: "Neurology" },
+    { name: "Dr. Williams", specialty: "Orthopedics" },
+    { name: "Dr. Johnson", specialty: "Pediatrics" },
+    { name: "Dr. Brown", specialty: "Dermatology" },
   ];
 
   return (

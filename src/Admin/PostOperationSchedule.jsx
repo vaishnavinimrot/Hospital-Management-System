@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function PostOperationSchedule() {
   const [schedules, setSchedules] = useState([]);
   const [schedule, setSchedule] = useState({ doctor: "", date: "" });
+  const [isScheduleAdded, setIsScheduleAdded] = useState(false);
 
   const handleChange = (e) => {
     setSchedule({ ...schedule, [e.target.name]: e.target.value });
@@ -13,6 +14,7 @@ function PostOperationSchedule() {
     if (schedule.doctor && schedule.date) {
       setSchedules([...schedules, schedule]);
       setSchedule({ doctor: "", date: "" });
+      setIsScheduleAdded(true);
     }
   };
 
@@ -37,13 +39,19 @@ function PostOperationSchedule() {
         />
         <button type="submit">Add Schedule</button>
       </form>
-      <ul>
-        {schedules.map((item, index) => (
-          <li key={index}>
-            Dr. {item.doctor} - {item.date}
-          </li>
-        ))}
-      </ul>
+
+      {isScheduleAdded && (
+        <div>
+          <h3>Added Schedules:</h3>
+          <ul>
+            {schedules.map((item, index) => (
+              <li key={index}>
+                Dr. {item.doctor} - {item.date}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

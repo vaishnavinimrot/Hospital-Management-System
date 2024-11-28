@@ -16,7 +16,9 @@ function UserRegister() {
     <div className= "user-register-container">
       <h2>User Registration</h2>
       <form onSubmit={handleSubmit}>
+      <label>Name:</label>
         <input name="name" type="text" placeholder="Name" onChange={handleChange} />
+        <label>Email:</label>
         <input name="email" type="email" placeholder="Email" onChange={handleChange} />
         <button type="submit">Register</button>
       </form>

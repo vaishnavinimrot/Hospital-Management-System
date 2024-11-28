@@ -18,7 +18,7 @@ body {
 /* Navbar Styling */
 .navbar {
   background-color: #0056b3;
-  padding: 10px 0;
+  padding: 5px 0;
   color: white;
   width: 100%;
   position: fixed;
@@ -125,46 +125,149 @@ input[type="text"] {
   font-family: Arial, sans-serif;
 }
 
-/* User Login Styling */
+/* User Login Container */
 .user-login-container {
-  
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 420px;
+  margin: 60px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Roboto', sans-serif;
+}
+
+.user-login-container h2 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.user-login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-login-container label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+
+.user-login-container input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.user-login-container input:focus {
+  border-color: #007bff;
+}
+
+.user-login-container button {
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user-login-container button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.user-login-container .forgot-password {
+  text-align: center;
+  font-size: 1rem;
+  color: #007bff;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.user-login-container .forgot-password:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .user-login-container {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .user-login-container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .user-login-container input, .user-login-container button {
+    padding: 12px;
+  }
+}
+
+
+/* Admin Login Styling */
+.admin-login-container {
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
   max-width: 400px;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centering the content */
 }
 
-.user-login-container h2 {
-  margin-top: 30%;
+.admin-login-container h2 {
+  margin-top: 10%;
   text-align: center;
-  color: #333;
+  color: #0e0c0c;
   margin-bottom: 20px;
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Slightly increased font size */
 }
 
-.user-login-container form {
+.admin-login-container form {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Ensures inputs are centered */
 }
 
-.user-login-container label {
+.admin-login-container label {
   font-size: 1rem;
   margin-bottom: 5px;
   color: #555;
+  text-align: left; /* Align the labels to the left */
+  width: 100%; /* Ensure labels are full-width */
 }
 
-.user-login-container input {
+.admin-login-container input {
   width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  max-width: 350px; /* Limits the width of the inputs */
 }
 
-.user-login-container button {
+.admin-login-container button {
+  width: 100%;
   padding: 12px;
   background-color: #007bff;
   color: white;
@@ -174,39 +277,22 @@ input[type="text"] {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 350px; /* Limits the width of the button */
 }
 
-.user-login-container button:hover {
+.admin-login-container button:hover {
   background-color: #06538e;
 }
 
-.user-login-container .forgot-password {
+.admin-login-container .forgot-password {
   text-align: center;
   font-size: 0.9rem;
   color: #007bff;
   margin-top: 10px;
 }
 
-.user-login-container .forgot-password:hover {
+.admin-login-container .forgot-password:hover {
   text-decoration: underline;
-}
-
-/* Admin Login Styling */
-.admin-login-container {
- 
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  max-width: 400px;
-  margin: 50px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.admin-login-container h2 {
-  margin-top: 20%;
-  text-align: center;
-  color: #0e0c0c;
-  margin-bottom: 10px;
 }
 
 /* Manage Doctor and Patient Form Styling */
@@ -223,6 +309,7 @@ input[type="text"] {
 
 .manage-doctor-container h2,
 .manage-patient-container h2 {
+  margin-top: 10%;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
@@ -232,6 +319,7 @@ input[type="text"] {
 .manage-patient-container form {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .manage-doctor-container input,
@@ -255,6 +343,7 @@ input[type="text"] {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 }
 
 .manage-doctor-container button:hover,
@@ -263,17 +352,20 @@ input[type="text"] {
 }
 
 .user-register-container {
-  
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
-  max-width: 400px;
+  max-width: 350px;
   margin: 50px auto;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the items horizontally */
+  justify-content: center; /* Centers the content vertically */
 }
 
 .user-register-container h2 {
-  margin-top: 30%;
+  margin-top: 10%;
   text-align: center;
   color: #333;
   margin-bottom: 20px;
@@ -281,16 +373,17 @@ input[type="text"] {
 }
 
 .user-register-container form {
-  
   display: flex;
   flex-direction: column;
+  align-items: center;  /* Ensures the form takes full width within the container */
 }
 
 .user-register-container label {
- 
   font-size: 1rem;
   margin-bottom: 5px;
   color: #555;
+  text-align: left; /* Align the labels to the left */
+  width: 100%; 
 }
 
 .user-register-container input {
@@ -300,10 +393,11 @@ input[type="text"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  max-width: 350px;
 }
 
 .user-register-container button {
- 
+  width: 100%;
   padding: 12px;
   background-color: #007bff;
   color: white;
@@ -313,12 +407,12 @@ input[type="text"] {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  max-width: 350px;
 }
 
 .user-register-container button:hover {
   background-color: #06538e;
 }
-
 
 /* Homepage Styling */
 .App {
